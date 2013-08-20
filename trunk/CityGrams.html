@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <style type="text/css">
+            body {
+                font-family: Arial;
+                font-size: 12px;
+            }
+            #map-container {
+                padding: 6px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #ccc #ccc #999 #ccc;
+                -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+                -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+                box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
+                width: 800px;
+            }
+
+            #map {
+                width: 800px;
+                height: 700px;
+            }
+            #overlay {
+                width: 612px;
+                height: 680px;
+                display: none;
+                position: absolute;
+                left: 94px;
+                top: 20px;
+                background-color: #fff;
+                padding-left: 5px;
+                padding-right: 5px;
+                padding-top: 5px;
+                cursor: pointer;
+                z-index: 30;
+            }
+            .overlayLegend {
+                max-width: 612px;
+                font-family: Verdana;
+                color: #000;
+            }
+            #searchBox {
+                position: absolute;
+                left: 250px;
+                width: 350px;
+                top: 20px;
+                z-index: 20;
+            }
+        </style>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+        <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer_compiled.js" type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="CityGrams.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/plusone.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+    </head>
+    <body>
+        <div>
+            <div id="map-container">
+               <div id="map"></div>
+            </div>
+            <input id="searchBox" type="text" placeholder="Insert your city here">
+            <div id="overlay"></div>
+            <span>(C) 2013 - Paulo Azevedo | You can use this as you will, but please give deserved credit.</span><br/>
+            <div class="g-follow" data-annotation="vertical-bubble" data-height="20" data-href="//plus.google.com/115480572086406617115" data-rel="author"></div>
+            <div class="g-plus" data-action="share" data-annotation="vertical-bubble" data-height="60"></div>
+            <iframe src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2Fpaulo.azevedo.5686&width=450&height=65&colorscheme=light&layout=box_count&show_faces=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:65px;" allowTransparency="true"></iframe>
+            <br/>
+            <a href="#" 
+                onclick="
+                  window.open(
+                    'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+                    'facebook-share-dialog', 
+                    'width=626,height=436'); 
+                  return false;">Share on Facebook</a>
+        </div>
+    </body>
+</html>
